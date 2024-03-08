@@ -1,0 +1,202 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+nav {
+  float: right;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li span {
+  color: #fff;
+  margin-right: 20px;
+}
+
+h1 {
+  display: inline;
+  margin: 0;
+}
+
+#hero {
+  background-image: url('matthew-smith-Rfflri94rs8-unsplash.jpg');
+  background-size: cover;
+  color: #000000;
+  text-align: center;
+  padding: 100px 0;
+}
+
+#hero h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#hero p {
+  font-size: 18px;
+  margin-bottom: 40px;
+
+}
+#ewaste-details {
+  background-color: black;
+  color: white; /* Set text color to white for better readability */
+  padding: 20px; /* Add padding to the section */
+}
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply a box-sizing border-box model to all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Hero section styles */
+#hero {
+  background-color: #f4f4f4;
+  padding: 20px 0;
+  text-align: center;
+}
+
+#hero h2 {
+  margin-bottom: 10px;
+}
+
+#hero p {
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #555;
+}
+
+/* Container styles */
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* E-waste details section styles */
+#ewaste-details {
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
+
+#ewaste-details h2 {
+  margin-bottom: 10px;
+}
+
+#ewaste-details p {
+  margin-bottom: 20px;
+}
+
+#ewaste-details ul {
+  margin-bottom: 20px;
+}
+
+#ewaste-details ul li {
+  margin-bottom: 10px;
+}
+
+/* Aim section styles */
+#aim {
+  background-color: #f4f4f4;
+  padding: 20px 0;
+}
+
+#aim h2 {
+  margin-bottom: 10px;
+}
+
+#aim ul {
+  margin-bottom: 20px;
+}
+
+#aim ul li {
+  margin-bottom: 10px;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+}

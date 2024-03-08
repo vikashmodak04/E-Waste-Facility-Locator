@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Waste Facility Locator</title>
+    <link rel="stylesheet" href="/static/css/home.css">
+</head>
+<body>
+    <header>
+        <h1>E-Waste Facility Locator</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'india_map' %}">Locations</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                {% if user.is_authenticated %}
+                    <li><span>Welcome, {{ user.username }}</span></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" >
+        <div class="container" >
+            <h2>Find the Nearest E-Waste Collection Facility</h2>
+            <p>Dispose of your old electronics responsibly and earn rewards!</p>
+            <a href="{% url 'india_map'%}" class="btn">Find Facilities</a>
+        </div>
+    </section>
+
+    <section id="ewaste-details">
+      <div class="container">
+          <h2>E-Waste: What You Need to Know</h2>
+          <p>E-waste, or electronic waste, refers to discarded electronic devices such as computers, smartphones, televisions, and appliances. As technology advances, the rate of e-waste generation continues to rise, posing significant environmental and health risks if not managed properly.</p>
+          <p>Here are some key points about e-waste:</p>
+          <ul>
+              <li><strong>Environmental Impact:</strong> Improper disposal of e-waste can lead to pollution of soil, water, and air due to the release of toxic chemicals and heavy metals.</li>
+              <li><strong>Health Hazards:</strong> Exposure to hazardous materials found in e-waste, such as lead, mercury, and cadmium, can result in serious health issues for humans and wildlife.</li>
+              <li><strong>Resource Conservation:</strong> Recycling e-waste allows for the recovery of valuable materials like gold, silver, and copper, reducing the need for raw material extraction and conserving natural resources.</li>
+              <li><strong>Regulations and Recycling:</strong> Many countries have implemented regulations for the proper disposal and recycling of e-waste to mitigate its environmental and health impacts. Recycling facilities and programs are available to collect and process e-waste safely.</li>
+          </ul>
+          <p>It's essential to dispose of e-waste responsibly by recycling it through authorized facilities to minimize its negative effects on the environment and public health.</p>
+      </div>
+  </section>
+  
+
+    <section id="aim">
+        <div class="container">
+            <h2>Our Aim</h2>
+            <p>The aim of the E-Waste Facility Locator is to:</p>
+            <ul>
+                <li>Help individuals find the nearest e-waste collection and recycling facilities easily.</li>
+                <li>Educate users about the harmful effects of improper e-waste disposal on the environment and human health.</li>
+                <li>Incentivize responsible e-waste disposal through a rewards system based on the amount of precious metals recovered.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 E-Waste Facility Locator</p>
+        </div>
+    </footer>
+</body>
+</html>

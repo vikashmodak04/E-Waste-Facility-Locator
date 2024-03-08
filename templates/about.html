@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - E-Waste Facility Locator</title>
+    <link rel="stylesheet" href='static/css/about.css'>
+</head>
+<body>
+    <header>
+        <h1>E-Waste Facility Locator</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">home</a></li>
+                <li><a href="{% url 'india_map' %}">Locations</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                {% if user.is_authenticated %}
+                    <li><span>Welcome, {{ user.username }}</span></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>The E-Waste Facility Locator is a platform dedicated to promoting responsible e-waste disposal and recycling. Our mission is to provide individuals with easy access to information about nearby e-waste collection and recycling facilities, educate them about the environmental and health impacts of improper e-waste disposal, and incentivize responsible behavior through a rewards system.</p>
+            <p>At E-Waste Facility Locator, we believe that every effort counts in protecting our environment and preserving natural resources for future generations. By properly disposing of e-waste and recycling valuable materials, we can minimize pollution, conserve energy, and reduce the need for raw materials extraction.</p>
+            <p>Thank you for joining us in our mission to create a sustainable future for all!</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 E-Waste Facility Locator</p>
+        </div>
+    </footer>
+</body>
+</html>

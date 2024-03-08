@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India Map</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            width: 100%;
+            height: 80vh; /* Adjust height as needed */
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <header>
+            <h1>E-Waste Facility Locator</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">home</a></li>
+                    <li><a href="{% url 'about' %}">Locations</a></li>
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    {% if user.is_authenticated %}
+                        <li><span>Welcome, {{ user.username }}</span></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </header>
+    <h1>India Map with Marks</h1>
+    <div id="map"></div>
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var indiaMap = L.map('map').setView([20.5937, 78.9629], 5);
+
+            // Add the OpenStreetMap tile layer
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(indiaMap);
+
+            // Function to get user location and add a marker
+            function getUserLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function(position) {
+                        var userLat = position.coords.latitude;
+                        var userLng = position.coords.longitude;
+                        var userLocation = [userLat, userLng];
+                        L.marker(userLocation).addTo(indiaMap)
+                            .bindPopup('Your Location')
+                            .openPopup();
+                    }, function(error) {
+                        console.error('Error getting user location:', error.message);
+                    });
+                } else {
+                    console.error('Geolocation is not supported by this browser.');
+                }
+            }
+
+            // Call the function to get user location
+            getUserLocation();
+            loc='https://icons8.com/icon/YrBfpRuRR9fD/dustbin'
+
+            // Define specific marks with custom icons
+            var marks = [
+                {lat: 31.2560, lng: 75.7051, name: 'Delhi', icon: loc},  // Example coordinates (Delhi)
+                {lat: 19.0760, lng: 72.8777, name: 'Mumbai', icon: loc},  // Mumbai
+                {lat: 12.9716, lng: 77.5946, name: 'Bangalore', icon: loc}   // Bangalore
+            ];
+
+            // Add marks to the map
+            marks.forEach(function(mark) {
+                L.marker([mark.lat, mark.lng], { icon: L.icon({ iconUrl: mark.icon }) }).addTo(indiaMap)
+                    .bindPopup(mark.name);
+            });
+        });
+    </script>
+</body>
+</html>
